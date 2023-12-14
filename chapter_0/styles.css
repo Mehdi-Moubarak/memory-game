@@ -1,0 +1,111 @@
+body {
+    background-image: url('./img/back3.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: 100px;
+    gap: 10px;
+}
+
+.grid-item {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front {
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+    border-radius: 20%;
+}
+
+.star {
+    position: relative;
+    display: block;
+    margin: 34px 0 0 0;
+    /* Adjust the margin to fit inside the squares */
+    width: 0px;
+    height: 0px;
+    border-right: 40px solid transparent;
+    /* Adjust the border values */
+    border-bottom: 30px solid gold;
+    /* Adjust the border values and color */
+    border-left: 40px solid transparent;
+    /* Adjust the border values */
+    transform: rotate(37deg);
+}
+
+.star:before {
+    position:absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    top: -19px;
+    /* Adjust the top value */
+    left: -25px;
+    /* Adjust the left value */
+    content: "";
+    border-bottom: 22px solid gold;
+    /* Adjust the border values and color */
+    border-left: 8px solid transparent;
+    /* Adjust the border values */
+    border-right: 8px solid transparent;
+    /* Adjust the border values */
+    transform: rotate(323deg);
+}
+
+.star:after {
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+    top: -px;
+    /* Adjust the top value */
+    left: -40px;
+    /* Adjust the left value */
+    content: "";
+    border-right: 40px solid transparent;
+    /* Adjust the border values */
+    border-bottom: 30px solid gold;
+    /* Adjust the border values and color */
+    border-left: 40px solid transparent;
+    /* Adjust the border values */
+    transform: rotate(286deg);
+}
